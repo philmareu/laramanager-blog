@@ -17,7 +17,7 @@ class AddFieldsToPostsResourceInLaramanager extends Migration
         $postResource = $this->getPostsResource();
 
         $this->getPostFields()->each(function($field) use ($postResource) {
-            $postResource->fields->create($field);
+            $postResource->fields()->create($field);
         });
     }
 
@@ -85,11 +85,10 @@ class AddFieldsToPostsResourceInLaramanager extends Migration
     }
 
     /**
-     * @return mixed
+     * @return \Illuminate\Database\Eloquent\Collection
      */
     private function getPostsResource()
     {
-        $postResource = LaramanagerResource::where('slug', 'posts')->where('namespace', 'LaraManagerBlog')->first();
-        return $postResource;
+        return LaramanagerResource::where('slug', 'posts')->where('namespace', 'PhilMareu\LaraManagerBlog')->first();
     }
 }

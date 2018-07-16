@@ -30,6 +30,6 @@ class AddPostsResourceInLaramanager extends Migration
      */
     public function down()
     {
-        LaramanagerResource::where('namespace', 'LaraManagerBlog')->delete();
+        LaramanagerResource::where('namespace', 'PhilMareu\LaraManagerBlog')->delete();
     }
 }

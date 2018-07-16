@@ -15,7 +15,7 @@ class AddPostsResourceInLaramanager extends Migration
         LaramanagerResource::create([
             'title' => 'Posts',
             'slug' => 'posts',
-            'namespace' => 'LaraManagerBlog',
+            'namespace' => 'PhilMareu\LaraManagerBlog',
             'model' => 'Models\Post',
             'order_column' => 1,
             'order_direction' => 'desc',

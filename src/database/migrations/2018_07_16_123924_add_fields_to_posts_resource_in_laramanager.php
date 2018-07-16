@@ -17,7 +17,7 @@ class AddFieldsToPostsResourceInLaramanager extends Migration
         $postResource = $this->getPostsResource();
 
         $this->getPostFields()->each(function($field) use ($postResource) {
-            $postResource->fields->save($field);
+            $postResource->fields->create($field);
         });
     }
 
@@ -53,7 +53,7 @@ class AddFieldsToPostsResourceInLaramanager extends Migration
                 'slug' => 'slug',
                 'type' => 'text',
                 'validation' => 'required|max:255',
-                'data' => json_encode(['target' => 'title'])
+                'data' => serialize(['target' => 'title'])
             ],
             [
                 'title' => 'Summary',
@@ -74,7 +74,7 @@ class AddFieldsToPostsResourceInLaramanager extends Migration
                 'type' => 'relational',
                 'validation' => 'required',
                 'list' => 1,
-                'data' => json_encode([
+                'data' => serialize([
                     'method' => 'author',
                     'model' => config('auth.providers.users.model'),
                     'title' => 'name',

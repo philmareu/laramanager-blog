@@ -20,7 +20,7 @@ class CreatePostsTable extends Migration
             $table->string('slug');
             $table->string('summary');
             $table->boolean('published');
-            $table->unsignedInteger('author_id');
+            $table->unsignedInteger('author_id')->nullable();
             $table->timestamps();
 
             $table->foreign('author_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');

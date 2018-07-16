@@ -8,10 +8,10 @@ class LaraManagerBlogServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->loadRoutesFrom(__DIR__ . '/../../../routes/web.php');
+        $this->loadRoutesFrom(__DIR__ . '/../../../src/routes/web.php');
 
         $this->publishes([
-            __DIR__ . '/../../../database/migrations/' => database_path('migrations')
+            __DIR__ . '/../../../src/database/migrations/' => database_path('migrations')
         ], 'laramanager-blog-migrations');
     }
 

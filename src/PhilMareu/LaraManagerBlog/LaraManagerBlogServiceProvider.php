@@ -12,7 +12,7 @@ class LaraManagerBlogServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__ . '/../../../database/migrations/' => database_path('migrations')
-        ], 'laramanager-migrations');
+        ], 'laramanager-blog-migrations');
     }
 
     public function register()

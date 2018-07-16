@@ -8,7 +8,8 @@
     {
       "name": "Phil Mareu",
       "email": "philmareu@gmail.com",
-      "homepage": "https://philmareu.com"
+      "homepage": "https://philmareu.com",
+      "role": "Developer"
     }
   ],
   "autoload": {

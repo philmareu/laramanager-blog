@@ -51,7 +51,7 @@ class AddFieldsToPostsResourceInLaramanager extends Migration
             [
                 'title' => 'Slug',
                 'slug' => 'slug',
-                'type' => 'text',
+                'type' => 'slug',
                 'validation' => 'required|max:255',
                 'data' => serialize(['target' => 'title'])
             ],

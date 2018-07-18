@@ -9,9 +9,9 @@ abstract class BlogController extends Controller
 {
     protected $postsRepository;
 
-    protected $listView = 'laramanager-blog::posts.list.default';
+    protected $listView = 'blog.index';
 
-    protected $showView = 'laramanager-blog::posts.show.default';
+    protected $showView = 'blog.show';
 
     public function __construct(PostsRepository $postsRepository)
     {

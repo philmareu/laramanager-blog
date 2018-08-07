@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Philsquare\LaraManager\Models\LaramanagerNavigationLink;
+use PhilMareu\Laramanager\Models\LaramanagerNavigationLink;
 
 class AddPostsResourceToLaramanagerNavigation extends Migration
 {

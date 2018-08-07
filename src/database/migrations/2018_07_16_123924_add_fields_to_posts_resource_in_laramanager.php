@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Collection;
 use Illuminate\Database\Migrations\Migration;
-use Philsquare\LaraManager\Models\LaramanagerResource;
-use Philsquare\LaraManager\Models\LaramanagerResourceField;
+use PhilMareu\Laramanager\Models\LaramanagerResource;
+use PhilMareu\Laramanager\Models\LaramanagerResourceField;
 
 class AddFieldsToPostsResourceInLaramanager extends Migration
 {

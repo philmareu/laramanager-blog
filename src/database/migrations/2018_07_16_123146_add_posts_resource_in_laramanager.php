@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Philsquare\LaraManager\Models\LaramanagerResource;
+use PhilMareu\Laramanager\Models\LaramanagerResource;
 
 class AddPostsResourceInLaramanager extends Migration
 {

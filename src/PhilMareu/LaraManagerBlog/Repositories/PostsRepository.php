@@ -1,12 +1,12 @@
 <?php
 
-namespace PhilMareu\LaraManagerBlog\Repositories;
+namespace PhilMareu\LaramanagerBlog\Repositories;
 
 
 use Doctrine\DBAL\Query\QueryBuilder;
 use Illuminate\Database\Eloquent\Collection;
-use PhilMareu\LaraManagerBlog\Contracts\PostsRepositoryInterface;
-use PhilMareu\LaraManagerBlog\Models\Post;
+use PhilMareu\LaramanagerBlog\Contracts\PostsRepositoryInterface;
+use PhilMareu\LaramanagerBlog\Models\Post;
 
 class PostsRepository implements PostsRepositoryInterface
 {

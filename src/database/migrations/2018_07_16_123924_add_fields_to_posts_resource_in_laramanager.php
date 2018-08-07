@@ -89,6 +89,6 @@ class AddFieldsToPostsResourceInLaramanager extends Migration
      */
     private function getPostsResource()
     {
-        return LaramanagerResource::where('slug', 'posts')->where('namespace', 'PhilMareu\LaraManagerBlog')->first();
+        return LaramanagerResource::where('slug', 'posts')->where('namespace', 'PhilMareu\LaramanagerBlog')->first();
     }
 }

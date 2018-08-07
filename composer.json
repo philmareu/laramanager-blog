@@ -1,8 +1,8 @@
 {
   "name": "philmareu/laramanager-blog",
-  "description": "Blog addition for LaraManager",
+  "description": "Blog addition for Laramanager",
   "keywords": ["laravel","admin","blog"],
-  "homepage": "https://github.com/philmareu/LaraManagerBlog",
+  "homepage": "https://github.com/philmareu/laramanager-blog",
   "license": "MIT",
   "authors": [
     {
@@ -14,7 +14,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "PhilMareu\\LaraManagerBlog\\": "src/PhilMareu/LaraManagerBlog"
+      "PhilMareu\\LaramanagerBlog\\": "src/PhilMareu/LaramanagerBlog"
     }
   },
   "minimum-stability": "stable",
@@ -25,7 +25,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "PhilMareu\\LaraManagerBlog\\LaraManagerBlogServiceProvider"
+        "PhilMareu\\LaramanagerBlog\\LaramanagerBlogServiceProvider"
       ]
     }
   }

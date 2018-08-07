@@ -15,7 +15,7 @@ class AddPostsResourceInLaramanager extends Migration
         LaramanagerResource::create([
             'title' => 'Posts',
             'slug' => 'posts',
-            'namespace' => 'PhilMareu\LaraManagerBlog',
+            'namespace' => 'PhilMareu\LaramanagerBlog',
             'model' => 'Models\Post',
             'order_column' => 1,
             'order_direction' => 'desc',
@@ -30,6 +30,6 @@ class AddPostsResourceInLaramanager extends Migration
      */
     public function down()
     {
-        LaramanagerResource::where('namespace', 'PhilMareu\LaraManagerBlog')->delete();
+        LaramanagerResource::where('namespace', 'PhilMareu\LaramanagerBlog')->delete();
     }
 }

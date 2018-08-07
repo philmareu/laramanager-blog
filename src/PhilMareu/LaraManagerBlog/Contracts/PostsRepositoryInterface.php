@@ -1,6 +1,6 @@
 <?php
 
-namespace PhilMareu\LaraManagerBlog\Contracts;
+namespace PhilMareu\LaramanagerBlog\Contracts;
 
 
 interface PostsRepositoryInterface

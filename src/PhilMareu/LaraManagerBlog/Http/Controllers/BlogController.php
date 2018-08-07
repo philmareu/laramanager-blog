@@ -1,9 +1,9 @@
 <?php
 
-namespace PhilMareu\LaraManagerBlog\Http\Controllers;
+namespace PhilMareu\LaramanagerBlog\Http\Controllers;
 
 
-use PhilMareu\LaraManagerBlog\Repositories\PostsRepository;
+use PhilMareu\LaramanagerBlog\Repositories\PostsRepository;
 
 abstract class BlogController extends Controller
 {

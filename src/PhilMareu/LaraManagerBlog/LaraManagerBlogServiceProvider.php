@@ -1,12 +1,10 @@
 <?php
 
-namespace PhilMareu\LaraManagerBlog;
+namespace PhilMareu\LaramanagerBlog;
 
 use Illuminate\Support\ServiceProvider;
-use PhilMareu\LaraManagerBlog\Contracts\PostsRepositoryInterface;
-use PhilMareu\LaraManagerBlog\Repositories\PostsRepository;
 
-class LaraManagerBlogServiceProvider extends ServiceProvider
+class LaramanagerBlogServiceProvider extends ServiceProvider
 {
     public function boot()
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace PhilMareu\LaraManagerBlog\Http\Controllers;
+namespace PhilMareu\LaramanagerBlog\Http\Controllers;
 
 
 use Illuminate\Foundation\Bus\DispatchesJobs;

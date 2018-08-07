@@ -1,6 +1,6 @@
 <?php
 
-namespace PhilMareu\LaraManagerBlog\Models;
+namespace PhilMareu\LaramanagerBlog\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

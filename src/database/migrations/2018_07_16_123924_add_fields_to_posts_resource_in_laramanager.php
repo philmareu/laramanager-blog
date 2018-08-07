@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Collection;
 use Illuminate\Database\Migrations\Migration;
+use PhilMareu\Laramanager\Models\LaramanagerFieldType;
 use PhilMareu\Laramanager\Models\LaramanagerResource;
 use PhilMareu\Laramanager\Models\LaramanagerResourceField;
 
@@ -17,7 +18,10 @@ class AddFieldsToPostsResourceInLaramanager extends Migration
         $postResource = $this->getPostsResource();
 
         $this->getPostFields()->each(function($field) use ($postResource) {
-            $postResource->fields()->create($field);
+            $resourceField = LaramanagerResourceField::make($field);
+            $resourceField->fieldType()->associate(LaramanagerFieldType::where('slug', $field['type'])->first());
+
+            $postResource->fields()->save($resourceField);
         });
     }
 
@@ -46,13 +50,15 @@ class AddFieldsToPostsResourceInLaramanager extends Migration
                 'slug' => 'title',
                 'type' => 'text',
                 'validation' => 'required|max:255',
-                'list' => 1
+                'list' => 1,
+                'is_unique' => 1
             ],
             [
                 'title' => 'Slug',
                 'slug' => 'slug',
                 'type' => 'slug',
                 'validation' => 'required|max:255',
+                'is_unique' => 1,
                 'data' => serialize(['target' => 'title'])
             ],
             [

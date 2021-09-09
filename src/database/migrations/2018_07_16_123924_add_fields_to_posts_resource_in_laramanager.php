@@ -2,9 +2,7 @@
 
 use Illuminate\Support\Collection;
 use Illuminate\Database\Migrations\Migration;
-use PhilMareu\Laramanager\Models\LaramanagerFieldType;
-use PhilMareu\Laramanager\Models\LaramanagerResource;
-use PhilMareu\Laramanager\Models\LaramanagerResourceField;
+use Illuminate\Support\Facades\DB;
 
 class AddFieldsToPostsResourceInLaramanager extends Migration
 {
@@ -18,10 +16,19 @@ class AddFieldsToPostsResourceInLaramanager extends Migration
         $postResource = $this->getPostsResource();
 
         $this->getPostFields()->each(function($field) use ($postResource) {
-            $resourceField = LaramanagerResourceField::make($field);
-            $resourceField->fieldType()->associate(LaramanagerFieldType::where('slug', $field['type'])->first());
 
-            $postResource->fields()->save($resourceField);
+            $fieldType = DB::table('laramanager_field_types')
+                ->where('slug', $field['type'])
+                ->first();
+
+            DB::table('laramanager_resource_fields')
+                ->insert(
+                    array_merge([
+                        'field_type_id' => $fieldType->id,
+                        'resource_id' => $postResource->id,
+                        $field
+                    ])
+                );
         });
     }
 
@@ -32,7 +39,9 @@ class AddFieldsToPostsResourceInLaramanager extends Migration
      */
     public function down()
     {
-        LaramanagerResourceField::where('resource_id', $this->getPostsResource()->id)->delete();
+        DB::table('laramanager_resources')
+            ->where('resource_id', $this->getPostsResource()->id)
+            ->delete();
     }
 
     private function getPostFields() : Collection
@@ -90,11 +99,11 @@ class AddFieldsToPostsResourceInLaramanager extends Migration
         ]);
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Collection
-     */
     private function getPostsResource()
     {
-        return LaramanagerResource::where('slug', 'posts')->where('namespace', 'PhilMareu\LaramanagerBlog')->first();
+        return DB::table('laramanager_resources')
+            ->where('slug', 'posts')
+            ->where('namespace', 'PhilMareu\LaramanagerBlog')
+            ->first();
     }
 }

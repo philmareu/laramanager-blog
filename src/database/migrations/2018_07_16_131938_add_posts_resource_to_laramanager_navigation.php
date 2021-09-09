@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use PhilMareu\Laramanager\Models\LaramanagerNavigationLink;
+use Illuminate\Support\Facades\DB;
 
 class AddPostsResourceToLaramanagerNavigation extends Migration
 {
@@ -12,7 +12,8 @@ class AddPostsResourceToLaramanagerNavigation extends Migration
      */
     public function up()
     {
-        LaramanagerNavigationLink::create([
+        DB::table('laramanager_navigation_links')
+            ->insert([
             'laramanager_navigation_section_id' => 2,
             'title' => 'Posts',
             'ordinal' => 100,
@@ -27,6 +28,8 @@ class AddPostsResourceToLaramanagerNavigation extends Migration
      */
     public function down()
     {
-        LaramanagerNavigationLink::where('title', 'Posts')->delete();
+        DB::table('laramanager_navigation_links')
+            ->where('title', 'Posts')
+            ->delete();
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use PhilMareu\Laramanager\Models\LaramanagerResource;
+use Illuminate\Support\Facades\DB;
 
 class AddPostsResourceInLaramanager extends Migration
 {
@@ -12,7 +12,8 @@ class AddPostsResourceInLaramanager extends Migration
      */
     public function up()
     {
-        LaramanagerResource::create([
+        DB::table('laramanager_resources')
+        ->insert([
             'title' => 'Posts',
             'slug' => 'posts',
             'namespace' => 'PhilMareu\LaramanagerBlog',
@@ -30,6 +31,8 @@ class AddPostsResourceInLaramanager extends Migration
      */
     public function down()
     {
-        LaramanagerResource::where('namespace', 'PhilMareu\LaramanagerBlog')->delete();
+        DB::table('laramanager_resources')
+            ->where('namespace', 'PhilMareu\LaramanagerBlog')
+            ->delete();
     }
 }

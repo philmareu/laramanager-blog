@@ -21,6 +21,8 @@ class AddFieldsToPostsResourceInLaramanager extends Migration
                 ->where('slug', $field['type'])
                 ->first();
 
+            unset($field['type']);
+
             DB::table('laramanager_resource_fields')
                 ->insert(
                     array_merge(

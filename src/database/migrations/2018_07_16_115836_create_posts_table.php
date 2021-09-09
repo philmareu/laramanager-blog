@@ -22,7 +22,7 @@ class CreatePostsTable extends Migration
             $table->boolean('published');
             $table->foreignId('author_id')
                 ->nullable()
-                ->constrained();
+                ->constrained('users');
             $table->timestamps();
         });
     }

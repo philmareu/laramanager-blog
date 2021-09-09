@@ -18,9 +18,8 @@
     }
   },
   "minimum-stability": "stable",
-  "require": {
-  },
   "require-dev": {
+    "illuminate/database": "^8.60"
   },
   "extra": {
     "laravel": {

@@ -23,11 +23,11 @@ class AddFieldsToPostsResourceInLaramanager extends Migration
 
             DB::table('laramanager_resource_fields')
                 ->insert(
-                    array_merge([
-                        'field_type_id' => $fieldType->id,
-                        'resource_id' => $postResource->id,
+                    array_merge(
+                        ['field_type_id' => $fieldType->id],
+                        ['resource_id' => $postResource->id],
                         $field
-                    ])
+                    )
                 );
         });
     }

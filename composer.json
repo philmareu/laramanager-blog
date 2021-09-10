@@ -19,7 +19,8 @@
   },
   "minimum-stability": "stable",
   "require-dev": {
-    "illuminate/database": "^8.60"
+    "illuminate/database": "^8.60",
+    "philmareu/laramanager": "dev-master"
   },
   "extra": {
     "laravel": {
